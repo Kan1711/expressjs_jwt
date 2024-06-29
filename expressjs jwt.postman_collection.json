@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "44fb537d-7b73-47ed-a5fd-7902222e21fc",
+		"name": "expressjs jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34845134"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user3@gmail.com\",\n    \"password\": \"user3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    // \"email\": \"user3@gmail.com\",\n    // \"password\": \"user3\"\n\n    \"email\": \"user2@gmail.com\",\n    // \"password\": \"user2\"\n    \"password\": \"new\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHNVNHZHbnZYZ3k3LnZoVDVxdmI2OS5TWTJIak9DcEpCM3RaenIvY2hiLnhpWlQxRk5HOGUyIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTk2NDU0MjMsImV4cCI6MTcyMDI1MDIyM30.otxmu2ZLo-L8wb1LcUqZ9RjhN6ubYh6AByRhiCs2afg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/refresh-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFF2L3FGWjdydnVMbjhiU1ZqVy44MmViY0FkazZrWWZLaW9BcDNTT05JMk9hWFNESHA3dFRXIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTg5NDEzMDAsImV4cCI6MTcxOTU0NjEwMH0.pdT5s0DiglPY7IA-xX12i6HLjyCmq2mtgoVrcaeeccE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    // \"email\": \"user3@gmail.com\",\n    // \"password\": \"user3\"\n\n    \"email\": \"user2@gmail.com\",\n    \"password\": \"user2\",\n    \"newPassword\": \"new\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/change-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot password",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    // \"email\": \"user3@gmail.com\",\n    // \"password\": \"user3\"\n\n    \"email\": \"user2@gmail.com\",\n    \"newPassword\": \"new\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/auth/forgot-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"forgot-password"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGkwSTgxc1ZCYlNWdE9EQy4wMnk5TmVmbzNRN2h1NmoyT29yTVNuczNrbUJZVTZtSXQ0aXplIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTk2NDg3NzAsImV4cCI6MTcxOTY1MjM3MH0.A7dgoSVhPmJMNX75lqlluU5whN5WsNM_WZSjps5SSaI",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
